@@ -101,6 +101,6 @@ configure :build do
 end
 
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket = 'www.weixelbaumer-pratner.ch'
+  s3_sync.bucket = 'www.weixelbaumer-partner.ch'
   s3_sync.region = 'eu-west-1'
 end
