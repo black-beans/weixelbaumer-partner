@@ -63,7 +63,7 @@ helpers do
   end
 
   def current?(url)
-    ('/' + current_resource.destination_path) == url
+    current_resource.url == url_for(url) || current_resource.url == url_for(url) + '/'
   end
 end
 
