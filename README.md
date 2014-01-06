@@ -77,5 +77,6 @@ $ bundle exec middleman s3_sync
 
 ## License
 
-This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+Images are licensed from iStockPhoto and cannot be reused without re-licensing.
+The text is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/.
