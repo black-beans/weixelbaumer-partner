@@ -1,0 +1,127 @@
+!!!
+%html
+  %head
+    %title= "Weixelbaumer &amp; Partner - #{ data.page.title }"
+    %meta{charset: 'utf-8'}/
+    %meta{content: 'Michael Kessler - www.flinkfinger.com', name: 'developer'}/
+    %meta{content: 'deutsch, de', 'http-equiv' => 'language'}/
+    %meta{content: 'index,follow', name: 'robots'}/
+    %meta{content: '7 days', name: 'revisit-after'}/
+    %meta{content: data.page.desc || 'Wir unterstützen wertschaffende, gesunde Entwicklungen von Menschen und Unternehmen. Mit unserem systemische Beratungs- & Coaching-Ansatz erarbeiten wir ganzheitliche & nachhaltige Kundenlösungen.', name: 'description'}/
+    %meta{content: data.page.desc || 'Unternehmensentwicklung, Visionsarbeit, Neuausrichtung, Führungskräfteentwicklung, Qualifizierung, massgeschneidert, Weiterbildungen, Change Management, Projekt Management, Coaching, Kulturwandel', name: 'keywords'}/
+
+    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'print', medium: :print
+    /[if lt IE 9]
+      = stylesheet_link_tag 'ie'
+
+    %link{href: '/favicon.ico', rel: 'icon', type: 'image/ico'}/
+    %link{href: '/favicon.ico', rel: 'shortcut icon'}/
+
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-28631070-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  %body
+
+    #container
+      #header
+        #logo
+          %a{href: 'index.html'}
+            %img{alt: 'Weixelbaumer Logo', src: '/images/weixelbaumer.png'}/
+
+      #menubar
+        #navigation
+          %ul
+            = nav_link 'Home', '/index.html'
+            = nav_link 'Angebot', '/angebot.html' do
+              = nav_link 'Unternehmensentwicklung', '/angebot/unternehmensentwicklung/potenzialanalyse-vitalisierungsprozess.html' do
+                = nav_link 'Potenzialanalyse - Vitalisierungsprozess', '/angebot/unternehmensentwicklung/potenzialanalyse-vitalisierungsprozess.html'
+                = nav_link 'Visionsarbeit &amp; Neuausrichtung', '/angebot/unternehmensentwicklung/visionsarbeit-und-neuausrichtung.html'
+                = nav_link 'Führungskräfteentwicklung', '/angebot/unternehmensentwicklung/fuehrungskraefteentwicklung.html'
+                = nav_link 'Teamentwicklung', '/angebot/unternehmensentwicklung/teamentwicklung.html'
+                = nav_link 'Kulturwandel', '/angebot/unternehmensentwicklung/kulturwandel.html'
+              = nav_link 'Coaching', '/angebot/coaching/einzel-coaching.html' do
+                = nav_link 'Einzel-Coaching', '/angebot/coaching/einzel-coaching.html'
+                = nav_link 'Team-Coaching', '/angebot/coaching/team-coaching.html'
+                = nav_link 'Konfliktmanagement', '/angebot/coaching/konfliktmanagement.html'
+              = nav_link 'Change- &amp; Projekt Management', '/angebot/change-und-projektmanagement.html' do
+                = nav_link 'Projekt Management Einführungen', '/angebot/change-und-projektmanagement/pm-einfuehrungen.html'
+                = nav_link 'Change Prozesse', '/angebot/change-und-projektmanagement/change-prozesse.html'
+                = nav_link 'Prozess Management', '/angebot/change-und-projektmanagement/prozess-management.html'
+                = nav_link 'Projektberatungen', '/angebot/change-und-projektmanagement/projektberatungen.html'
+              = nav_link 'Trainings & Workshops', '/angebot/trainings-und-workshops.html' do
+                = nav_link 'Führungskräfte Workshops', '/angebot/trainings-und-workshops/fuehrungskraefte-workshops.html'
+                = nav_link 'Projekt Management', '/angebot/trainings-und-workshops/projekt-management.html'
+                = nav_link 'Change Management', '/angebot/trainings-und-workshops/change-management.html'
+                = nav_link 'Softskills', '/angebot/trainings-und-workshops/softskills.html'
+                = nav_link 'Präsenz - Präsentieren mit Persönlichkeit', '/angebot/trainings-und-workshops/praesenz-praesentieren-mit-persoenlichkeit.html'
+            = nav_link 'Philosophie', '/philosophie/wofuer-wir-stehen.html' do
+              = nav_link 'Wofür wir stehen', '/philosophie/wofuer-wir-stehen.html'
+              = nav_link 'Unser Ansatz', '/philosophie/unser-ansatz.html'
+              = nav_link 'Vision', '/philosophie/vision.html'
+            = nav_link 'Über uns', '/ueber-uns/inhaber.html' do
+              = nav_link 'Inhaber', '/ueber-uns/inhaber.html'
+              = nav_link 'Unternehmen', '/ueber-uns/unternehmen.html'
+              = nav_link 'Partner', '/ueber-uns/partner.html'
+              = nav_link 'Standort / Lageplan', '/ueber-uns/standort-lageplan.html'
+            = nav_link 'Referenzen', '/referenzen.html'
+            = nav_link 'Aktuelles', '/aktuelles/afterwork-themenabend-kriese.html' do
+              = nav_link "Afterwork Themenabend - 'Krise'", '/aktuelles/afterwork-themenabend-kriese.html'
+              = nav_link "Afterwork Themenabend - 'Motivation'", '/aktuelles/afterwork-themenabend-motivation.html'
+              = nav_link 'Erfolgsstory - ERP Einführung', '/aktuelles/erfolgsstory-erp-einfuehrung.html'
+              = nav_link 'Potenzialanalysen - KMU-Vitalisierungsprozess', '/aktuelles/potenzialanalysen-kmu-vitalisierungsprozess.html'
+              = nav_link 'Archiv', '/aktuelles/archiv.html'
+            = nav_link 'Kontakt', '/kontakt.html'
+
+      #content{ class: page_classes }
+        .inner
+          = yield
+
+      #sidebar
+        #spotlight
+          .inner
+            = link_to '/angebot/unternehmensentwicklung.html' do
+              %img{alt: 'NPM Studie 2011', height: '41', src: '/images/alchimedius.png', width: '170'}/
+            = link_to 'Potenziale nutzen', '/angebot/unternehmensentwicklung.html'
+
+        - if content_for?(:news)
+          #news
+            .inner
+              %h3 Aktuell
+              = yield_content :news
+
+        - if content_for?(:downloads)
+          #downloads
+            .inner
+              %h3 Downloads
+              = yield_content :downloads
+
+      #footer
+        #center
+          Weixelbaumer und Partner GmbH – Unternehmensentwicklung, Coaching, Change und Projekt Management
+          %br/
+          Brühlweg 1, CH-8049 Zürich, T +41 43 311 58 70,
+          %a{href: 'mailto:kontakt@weixelbaumer-partner.ch'} kontakt@weixelbaumer-partner.ch
+
+        #service
+          #presentation
+            %ul
+              %li.pdf
+                %a{href: '/documents/Unternehmenspräsentation_2013_1.pdf', target: '_new'} Unternehmenspräsentation
+          %ul
+            = nav_link 'Kontakt', '/kontakt.html'
+            %li.small -
+            = nav_link 'Impressum', '/impressum.html'
+            %li.small -
+            = nav_link 'Sitemap', '/sitemap.html'
+
+    %script{src: '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', type: 'text/javascript'}
+    %script{src: '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js', type: 'text/javascript'}
+    = javascript_include_tag 'application'
