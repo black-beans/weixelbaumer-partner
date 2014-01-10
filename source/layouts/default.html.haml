@@ -87,9 +87,10 @@
       #sidebar
         #spotlight
           .inner
-            = link_to '/angebot/unternehmensentwicklung.html' do
-              %img{alt: 'NPM Studie 2011', height: '41', src: '/images/alchimedius.png', width: '170'}/
-            = link_to 'Potenziale nutzen', '/angebot/unternehmensentwicklung.html'
+            -#
+              = link_to '/angebot/unternehmensentwicklung.html' do
+                %img{alt: 'NPM Studie 2011', height: '41', src: '/images/alchimedius.png', width: '170'}/
+              = link_to 'Potenziale nutzen', '/angebot/unternehmensentwicklung.html'
 
         - if content_for?(:news)
           #news
