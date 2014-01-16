@@ -155,8 +155,11 @@ body {
 
     padding: 15px;
     position: relative;
-    img:first-child {
+
+    img:first-child, .kenburns {
       @include border-radius(3px);
+      width: 520px;
+      height: 180px;
     }
 
     a[name] {
