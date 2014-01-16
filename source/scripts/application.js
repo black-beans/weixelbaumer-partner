@@ -14,8 +14,10 @@ function attachImageSwap(id, image, reset) {
     $('#' + id).mouseenter(function () {
         $('#homeMap').attr('src', '/images/' + image);
     }).mouseleave(function () {
-            $('#homeMap').attr('src', '/images/' + reset);
-        });
+        $('#homeMap').attr('src', '/images/' + reset);
+    }).touchend(function() {
+      // Empty touch event is needed to fix ImageMap touch
+    });
 }
 
 function attachTextEffect(id, top, left, words) {
