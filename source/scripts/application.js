@@ -15,8 +15,6 @@ function attachImageSwap(id, image, reset) {
     $('#homeMap').attr('src', '/images/' + image);
   }).mouseleave(function () {
     $('#homeMap').attr('src', '/images/' + reset);
-  }).touchend(function() {
-    // Empty touch event is needed to fix ImageMap touch
   });
 }
 
@@ -47,37 +45,36 @@ $(document).ready(function () {
   preloadImages();
 
   if (isCanvasSupported()) {
-    var ken = $('.ken');
-
-    if (ken.length > 0) {
-      ken.after('<canvas class="kenburns"></canvas>');
-
-      $('.kenburns').kenburns({
-        images: [ken.attr('src')],
-        frames_per_second: 24,
-        display_time: 8000,
-        fade_time: 2000,
-        zoom: 1.1
+    if ($('.kenburns').length > 0) {
+      $('img', '#img').kenburns();
+      $('img', '#img').kenburns('set', {
+        'zoom': 1.2,
+        'duration': 5000,
+        'height': 180,
+        'width': 520,
+        'align': 'random'
       });
-
-      ken.remove();
     }
   }
 
 
-  attachImageSwap('angebotchangeundprojektmanagement', 'angebot_change_und_projektmanagement.png', 'angebot.png');
-  attachImageSwap('angebotcoachingundtraining', 'angebot_coaching_und_training.png', 'angebot.png');
-  attachImageSwap('angebotunternehmensentwicklung', 'angebot_unternehmensentwicklung.png', 'angebot.png');
+  var touch = 'ontouchend' in document;
 
-  attachImageSwap('homechangeundprojektmanagement', 'home_change_und_projektmanagement.png', 'home.png');
-  attachImageSwap('homecoachingundtraining', 'home_coaching_und_training.png', 'home.png');
-  attachImageSwap('homeunternehmensentwicklung', 'home_unternehmensentwicklung.png', 'home.png');
+  if (!touch) {
+    attachImageSwap('angebotchangeundprojektmanagement', 'angebot_change_und_projektmanagement.png', 'angebot.png');
+    attachImageSwap('angebotcoachingundtraining', 'angebot_coaching_und_training.png', 'angebot.png');
+    attachImageSwap('angebotunternehmensentwicklung', 'angebot_unternehmensentwicklung.png', 'angebot.png');
 
-  $('#homechangeundprojektmanagement').mTip({ alignTo: 'cursor', spacing: 13 });
-  $('#homecoachingundtraining').mTip({ alignTo: 'cursor', spacing: 13 });
-  $('#homeunternehmensentwicklung').mTip({ alignTo: 'cursor', spacing: 13 });
+    attachImageSwap('homechangeundprojektmanagement', 'home_change_und_projektmanagement.png', 'home.png');
+    attachImageSwap('homecoachingundtraining', 'home_coaching_und_training.png', 'home.png');
+    attachImageSwap('homeunternehmensentwicklung', 'home_unternehmensentwicklung.png', 'home.png');
 
-  attachTextEffect('unternehmen', 110, 158, ['Wirtschaftlichkeit', 'Markt', 'Rechtsform', 'Produkte', 'Strategie', 'Dienstleistungen', 'Branche', 'Hierarchie', 'Standorte', 'Philosophie', 'Struktur', 'Kultur', 'Zielkunde']);
-  attachTextEffect('mensch', 215, 415, ['Unternehmer', 'Werte', 'Führungskraft', 'Kulturkreise', 'Mitarbeiter', 'Erfahrungen', 'Kompetenzen', 'Projektleiter', 'Einstellungen', 'Erwartungen', 'Experte', 'Netzwerke']);
-  attachTextEffect('methodik', 320, 158, ['Instrumente', 'Verständlichkeit', 'Massgeschneidert', 'Hilfsmittel', 'Funktional', 'Wirksamkeit', 'Investition', 'Vorgehensweisen', 'Skalierbarkeit', 'Kompatibilität', 'Aufwand']);
+    $('#homechangeundprojektmanagement').mTip({ alignTo: 'cursor', spacing: 13 });
+    $('#homecoachingundtraining').mTip({ alignTo: 'cursor', spacing: 13 });
+    $('#homeunternehmensentwicklung').mTip({ alignTo: 'cursor', spacing: 13 });
+
+    attachTextEffect('unternehmen', 110, 158, ['Wirtschaftlichkeit', 'Markt', 'Rechtsform', 'Produkte', 'Strategie', 'Dienstleistungen', 'Branche', 'Hierarchie', 'Standorte', 'Philosophie', 'Struktur', 'Kultur', 'Zielkunde']);
+    attachTextEffect('mensch', 215, 415, ['Unternehmer', 'Werte', 'Führungskraft', 'Kulturkreise', 'Mitarbeiter', 'Erfahrungen', 'Kompetenzen', 'Projektleiter', 'Einstellungen', 'Erwartungen', 'Experte', 'Netzwerke']);
+    attachTextEffect('methodik', 320, 158, ['Instrumente', 'Verständlichkeit', 'Massgeschneidert', 'Hilfsmittel', 'Funktional', 'Wirksamkeit', 'Investition', 'Vorgehensweisen', 'Skalierbarkeit', 'Kompatibilität', 'Aufwand']);
+  }
 });
